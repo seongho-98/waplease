@@ -7,7 +7,7 @@ button{ cursor: pointer; }
 
 .loginbox{
     width: 780px; height: 550px;
-    margin: 0 auto; /* 블록 가운데 처리 */
+    margin: 0 auto; 
 }
 
 .loginbox h2{
