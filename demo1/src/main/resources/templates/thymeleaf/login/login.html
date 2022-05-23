@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <!--<link rel="stylesheet" href="/login/login.css">-->
+    <link rel="stylesheet" href="/login/login.css"/>
+
+</head>
+<body>
+<div class="loginbox">
+    <h2>WAPLEASE</h2>
+    <form method="POST" action="/member/loginCheck">
+        <input id="username" type="text" name="member_id" placeholder="아이디(학번)">
+        <input id="password" type="text" name="member_name" placeholder="이름">
+
+        <button type="submit">로그인</button>
+
+        <br><br>
+        <hr>
+
+        <ul>
+            <li><a href="#">아이디 찾기</a></li>
+            <li><a href="#">비밀번호 찾기</a></li>
+            <li><a href="/join/join.html">회원가입</a></li>
+            <!--<li><a href="/src/main/resources/static/join/join.html">회원가입</a></li>-->
+        </ul>
+
+    </form>
+</div>
+</body>
+</html>
