@@ -18,8 +18,8 @@ public class MapperTest {
 
         m1.setMember_id("id_test");
         m1.setMember_name("test");
-        m1.setMember_addr("addr_test");
-        System.out.println(m1.getMember_addr());
+        m1.setMember_pw("addr_test");
+        System.out.println(m1.getMember_pw());
         memberMapper.insertMember(m1);
     }
 }

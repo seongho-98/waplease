@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Book List Page</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+  <h3 style="text-align:center; padding : 50px 0 20px">
+    Book List Page
+    <small class="text-muted">by Bs v4.x</small>
+  </h3>
+
+  <table class="table table-striped text-center table-hover">
+    <caption>List of books</caption>
+    <thead class="thead-dark">
+    <tr>
+      <th>Id</th>
+      <th>title</th>
+      <th>type</th>
+      <th>author</th>
+      <th>inUse</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="row:${bookList}">
+      <td th:text="${row.id}">홍길동</td>
+      <td th:text="${row.title}">1</td>
+      <td th:text="${row.type}">2</td>
+      <td th:text="${row.author}">3</td>
+      <td th:text="${row.inUse}">3</td>
+      <!--
+        클릭 시 스크롤이 최상단으로 이동하는걸 해결하려면,
+          1. onclick에 return false;
+          2. a 태그에 javascript : return false; 또는 javascript:void(0);
+            <a href="javascript:void(0);"></a>
+          3. a 태그에 href="#"을 해줘서 최상단으로 가는 거라 "#none"이나 #뒤에 아무 문자나 붙여줌.
+      -->
+    </tr>
+    <tr>
+      <td class="bg.primary"></td>
+      <td class="bg-info" colspan=3>#</td>
+      <td class="bg-success" colspan=2>#</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div class="text-center">
+
+
+    <button class="btn btn-outline-secondary rounded-0" onclick="history.go(-1)">Back</button>
+
+  </div>
+
+  <div class="mb-5">
+    &nbsp;
+  </div>
+
+</div>
+</body>
+</html>

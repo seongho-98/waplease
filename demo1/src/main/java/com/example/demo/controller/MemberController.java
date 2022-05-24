@@ -40,9 +40,9 @@ public class MemberController {
     ){
         String id = m1.getMember_id();
         String name = m1.getMember_name();
-        String addr = m1.getMember_addr();
+        String pw = m1.getMember_pw();
 
-        if(id.length() < 4 || name.length() < 1 ){
+        if(id.length() < 4 || name.length() < 1 || pw.length() < 3){
             model.addAttribute("msg", "아이디나 이름을 잘못 입력하셨습니다");
             model.addAttribute("url", "/join");
             return "/alert/MessageAlert";
@@ -61,6 +61,8 @@ public class MemberController {
         String id = m1.getMember_id();
         String name = m1.getMember_name();*/
 
+        String pw = m1.getMember_pw();
+        System.out.println("=============> 사용자 비밀번호 : " + pw);
         boolean isMember = memberService.loginCheck(m1);
 
         if(isMember == true){
@@ -74,8 +76,4 @@ public class MemberController {
 
     }
 
-    @GetMapping("/api/hello")
-    public String hello() {
-        return "안녕하세요. 현재 서버 시간은 " + new Date() + " 입니다.";
-    }
 }
