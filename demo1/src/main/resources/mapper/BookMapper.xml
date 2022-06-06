@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-m//mabatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.mapper.BookMapper">
+
+    <select id="selectBookAll" resultType="BookDTO">
+        SELECT *
+        FROM book_samples;
+    </select>
+
+    <select id="searchBook" parameterType="String" resultType="BookDTO">
+        SELECT *
+        FROM book_samples
+        WHERE title LIKE CONCAT('%',#{bookSearch},'%')
+           OR type1 LIKE CONCAT('%',#{bookSearch},'%');
+
+    </select>
+</mapper>

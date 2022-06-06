@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-m//mabatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.mapper.MemberMapper">
+    <insert id="insertMember" parameterType="MemberDTO">
+        INSERT INTO member_samples(
+            member_id, member_name, member_pw
+        )VALUES(
+                   #{member_id},#{member_name}, #{member_pw}
+               );
+    </insert>
+
+    <select id="loginCheck" parameterType="MemberDTO" resultType="MemberDTO">
+        SELECT *
+        FROM member_samples
+        WHERE member_id = #{member_id}
+            AND member_pw = #{member_pw};
+    </select>
+
+    <select id="findMember" parameterType="String" resultType="MemberDTO">
+        SELECT *
+        FROM member_samples
+        WHERE member_id = #{member_id};
+    </select>
+
+</mapper>
+
+<!--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-m//mabatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.springboot_itgo.mapper.MemberMapper">
+    <insert id="insertMember" parameterType="MemberDTO">
+        INSERT INTO member(
+            name, id, phone
+        )VALUES(
+                   #{name},#{id}, #{phone}
+               );
+    </insert>
+
+    <select id="selectMemberOne" parameterType="int" resultType="MemberDTO">
+        SELECT * FROM member WHERE idx = #{num};
+    </select>
+
+    <update id="updateMember" parameterType="MemberDTO">
+        <![CDATA[
+        UPDATE
+            member
+        SET
+            name = #{name}
+          , id = #{id}
+          , phone = #{phone}
+        WHERE
+            idx = #{idx};
+        ]]>
+    </update>
+
+    <select id="selectMemberAll" resultType="MemberDTO">
+        SELECT
+            *
+        FROM
+            member;
+    </select>
+
+    <delete id="deleteMemberOne" parameterType="int">
+        DELETE FROM
+            member
+        WHERE
+            idx = #{num};
+    </delete>
+
+</mapper>-->
+

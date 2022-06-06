@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko"
+    xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+      <title>waplease.com</title>
+    <!--controller 적용 후 css가 안불러지는 오류 있었음. 절대경로로 설정하니 해결됨.-->
+    <!--<link rel="stylesheet" href="/css/waplease_style.css"/>-->
+    <!--<link rel="stylesheet" href="./waplease_style.css"/>-->
+</head>
+<body>
+<nav th:replace="/fragments/frag_topmenu :: tpl_nav()"></nav>
+
+<div class="title">
+    <h2>WAPLEASE</h2>
+</div>
+<br>
+<br>
+<br>
+
+<div class="search">
+    <form action="/search" method="GET">
+        <input class="input_text" name="bookSearch" type="text" placeholder="자료 검색">
+        <button type="submit"><img src="/img/search.png" style="width:30px"></button>
+    </form>
+</div>
+
+<div class="container">
+    <ul>
+        <li class="box"><a href="#">공지사항<img src="1.png" style="width:30px"></a></li>
+        <li class="box"><a href="#">동방안내<img src="2.png"></a></li>
+        <li class="box"><a href="#">마이페이지<img src="3.png"></a></li>
+        <li class="box"><a href="#">대출현황<img src="4.png"></a></li>
+    </ul>
+</div>
+
+
+</body>
+</html>

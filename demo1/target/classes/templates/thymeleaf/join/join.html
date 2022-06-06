@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko"
+    xmlns:th="www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="/css/join.css">
+    <!-- <link rel="stylesheet" href="join.css" > -->
+
+</head>
+<body>
+<div class="loginbox">
+    <h2>회원가입</h2>
+    <form action="/member/join" method="post">
+        <!--이름, 학번으로 사용자 인증을 받은 후 가입할 수 있도록 하기.-->
+        <div>
+            <label for="username">이름</label>
+            <input class="joinCheck" id="username" type="text" name="member_name">
+            <label for="usernumber">학번</label>
+            <input class="joinCheck" id="usernumber" type="text" name="member_id">
+
+            <button class="" type="submit">사용자 인증</button>
+        </div>
+
+        <label for="password">비밀번호</label>
+        <input id="password" type="password" name="member_pw">
+        <label for="password-check">비밀번호 확인</label>
+        <input id="password-check" type="password">
+
+        <button type="submit">회원 가입</button>
+
+
+    </form>
+</div>
+</body>
+</html>
