@@ -7,5 +7,5 @@ import java.util.List;
 
 @Service
 public interface BookService {
-    public List<BookDTO> getBookList();
+    public List<BookDTO> getBookList(String bookSearch);
 }

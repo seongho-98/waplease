@@ -13,10 +13,13 @@ public class BookServiceImpl implements BookService{
     private BookMapper bookMapper;
 
     @Override
-    public List<BookDTO> getBookList(){
+    public List<BookDTO> getBookList(String bookSearch){
+        if(bookSearch == ""){
+            return bookMapper.selectBookAll();
+        }else{
+            return bookMapper.searchBook(bookSearch);
+        }
 
-        System.out.println("===========>> book 서비스 호출됨");
-        return bookMapper.selectBookAll();
 
     }
 }

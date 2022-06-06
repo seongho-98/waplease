@@ -1,0 +1,79 @@
+body{
+    background-color:#f5f6f7;
+}
+
+*{ padding: 0; margin: 0; }
+button{ cursor: pointer; }
+
+.logout{
+    vertical-align: right;
+}
+.bookpagebox{
+    width: 780px; height: 550px;
+    margin: 0 auto;
+}
+
+.bookpagebox form{
+    width: 100%; height: 600px;
+    background-color: #fff;
+    padding: 60px; box-sizing: border-box;
+}
+
+.bookpagebox h2{
+    width: 100%;
+    height: 250px; line-height: 300px;
+    text-align: center; font-size: 40px;
+    font-weight: normal;
+    letter-spacing: 10px;
+}
+
+.search_area input{
+    display: block;
+    width: 100%; height: 50px;
+    margin-bottom: 25px;
+    border-top: none; border-left: none; border-right: none;
+    background-color: #fafafa;
+}
+
+.bookbox{
+    display: block;
+    width: 97%; height: 45%;
+    margin-bottom: 30px;
+    padding: 10px;
+    border: 1px solid black;
+    background-color: #fafafa;
+}
+
+.img{
+    display: inline-block;
+    width: 25%;
+    padding: 0;
+}
+
+.text{
+    display: inline-block;
+    width: 55%;
+    height: 100%;
+    padding: 0 20px;
+    vertical-align: top;
+}
+
+.text ul{
+    width: 100%;
+    height: 100%; line-height: 30px;
+    text-align: left; font-size: 15px;
+}
+
+.button{
+    display: inline-block;
+    vertical-align: top;
+    width: 10%; height: 100%;
+
+}
+
+.button button{
+    width: 100%; height: 20%;
+    margin: 45% 0;
+    background-color: #1673ea;
+    color: #fff; font-size: 14px; font-weight: bold;
+}

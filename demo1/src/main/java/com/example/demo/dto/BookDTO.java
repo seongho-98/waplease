@@ -3,7 +3,7 @@ package com.example.demo.dto;
 public class BookDTO {
     private String id;
     private String title;
-    private String type;
+    private String type1;
     private String author;
     private int inUse;
 
@@ -12,7 +12,8 @@ public class BookDTO {
         return "BookDTO{" +
                 "id='" + id + '\'' +
                 ", title='" + title + '\'' +
-                ", type='" + type + '\'' +
+                ", type='" + type1
+                + '\'' +
                 ", author='" + author + '\'' +
                 ", inuse=" + inUse +
                 '}';
@@ -21,10 +22,10 @@ public class BookDTO {
     public BookDTO() {
     }
 
-    public BookDTO(String id, String title, String type, String author, int inuse) {
+    public BookDTO(String id, String title, String type1, String author, int inuse) {
         this.id = id;
         this.title = title;
-        this.type = type;
+        this.type1 = type1;
         this.author = author;
         this.inUse = inuse;
     }
@@ -45,12 +46,12 @@ public class BookDTO {
         this.title = title;
     }
 
-    public String getType() {
-        return type;
+    public String getType1() {
+        return type1;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setType1(String type1) {
+        this.type1 = type1;
     }
 
     public String getAuthor() {

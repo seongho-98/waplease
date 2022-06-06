@@ -9,4 +9,5 @@ import java.util.List;
 public interface BookMapper {
     public List<BookDTO> selectBookAll();
 
+    public List<BookDTO> searchBook(String bookSearch);
 }

@@ -5,8 +5,14 @@
 
     <select id="selectBookAll" resultType="BookDTO">
         SELECT *
-        FROM book_samples
-        WHERE inUse = 0;
+        FROM book_samples;
     </select>
 
+    <select id="searchBook" parameterType="String" resultType="BookDTO">
+        SELECT *
+        FROM book_samples
+        WHERE title LIKE CONCAT('%',#{bookSearch},'%')
+           OR type1 LIKE CONCAT('%',#{bookSearch},'%');
+
+    </select>
 </mapper>

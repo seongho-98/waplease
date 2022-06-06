@@ -7,4 +7,5 @@ import org.springframework.stereotype.Service;
 public interface MemberService {
     public void insertMember(MemberDTO memberDTO);
     public boolean loginCheck(MemberDTO memberDTO);
+    public MemberDTO findById(String member_id);
 }

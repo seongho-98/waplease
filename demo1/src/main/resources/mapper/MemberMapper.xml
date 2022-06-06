@@ -17,6 +17,12 @@
             AND member_pw = #{member_pw};
     </select>
 
+    <select id="findMember" parameterType="String" resultType="MemberDTO">
+        SELECT *
+        FROM member_samples
+        WHERE member_id = #{member_id};
+    </select>
+
 </mapper>
 
 <!--

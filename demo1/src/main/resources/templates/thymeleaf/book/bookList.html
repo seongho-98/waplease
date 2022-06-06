@@ -2,10 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Book List Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+  <title>Book List Page</title>
 </head>
 <body>
+<nav th:replace="/fragments/frag_topmenu :: tpl_nav()"></nav>
 <div class="container">
   <h3 style="text-align:center; padding : 50px 0 20px">
     Book List Page
@@ -16,11 +19,11 @@
     <caption>List of books</caption>
     <thead class="thead-dark">
     <tr>
-      <th>Id</th>
-      <th>title</th>
-      <th>type</th>
-      <th>author</th>
-      <th>inUse</th>
+      <th>책분류번호</th>
+      <th>제목</th>
+      <th>유형</th>
+      <th>저자</th>
+      <th>대출가능여부</th>
     </tr>
     </thead>
     <tbody>
@@ -30,13 +33,6 @@
       <td th:text="${row.type}">2</td>
       <td th:text="${row.author}">3</td>
       <td th:text="${row.inUse}">3</td>
-      <!--
-        클릭 시 스크롤이 최상단으로 이동하는걸 해결하려면,
-          1. onclick에 return false;
-          2. a 태그에 javascript : return false; 또는 javascript:void(0);
-            <a href="javascript:void(0);"></a>
-          3. a 태그에 href="#"을 해줘서 최상단으로 가는 거라 "#none"이나 #뒤에 아무 문자나 붙여줌.
-      -->
     </tr>
     <tr>
       <td class="bg.primary"></td>
