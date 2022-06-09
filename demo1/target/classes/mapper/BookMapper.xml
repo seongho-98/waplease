@@ -13,6 +13,23 @@
         FROM book_samples
         WHERE title LIKE CONCAT('%',#{bookSearch},'%')
            OR type1 LIKE CONCAT('%',#{bookSearch},'%');
-
     </select>
+
+    <select id="findBookById" parameterType="String" resultType="BookDTO">
+        SELECT *
+        FROM book_samples
+        WHERE id = #{id};
+    </select>
+
+    <update id="setInUseFalse" parameterType="String">
+        UPDATE book_samples
+        SET inUse = 0
+        WHERE id = #{id};
+    </update>
+
+    <update id="setInUseTrue" parameterType="String">
+        UPDATE book_samples
+        SET inUse = 1
+        WHERE id = #{id};
+    </update>
 </mapper>

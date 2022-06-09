@@ -10,4 +10,10 @@ public interface BookMapper {
     public List<BookDTO> selectBookAll();
 
     public List<BookDTO> searchBook(String bookSearch);
+
+    public BookDTO findBookById(String id);
+
+    public void setInUseFalse(String id);
+
+    public void setInUseTrue(String id);
 }

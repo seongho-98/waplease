@@ -26,6 +26,25 @@ public class BookController {
 
     private final SessionManager sessionManager;
 
+    @GetMapping("/bookList")
+    public String bookList2(Model model, HttpServletRequest request){
+
+        MemberDTO member = sessionManager.getSession(request);
+
+        if(member == null){
+            System.out.println("member가 null입니다");
+            return "/login/login";
+        }
+
+        model.addAttribute("userName", memberService.findById(member.getMember_id()).getMember_name());
+
+        List<BookDTO> bookList = bookService.getBookList("");
+
+        model.addAttribute("bookList", bookList);
+
+        return "/book/bookList2";
+    }
+
 
     @GetMapping("/search")
     public String bookList(Model model, @RequestParam(value="bookSearch") String bookSearch, HttpServletRequest request){
@@ -46,5 +65,20 @@ public class BookController {
         return "/book/bookList2";
     }
 
+    @GetMapping("/borrow")
+    public String book_borrow(BookDTO bookDTO){
+
+        bookService.inUseChange(bookDTO.getId(), 0);
+
+        return "redirect:/mainpage";
+    }
+
+    @GetMapping("/return")
+    public String book_return(BookDTO bookDTO){
+
+        bookService.inUseChange(bookDTO.getId(), 1);
+
+        return "redirect:mainpage";
+    }
 
 }

@@ -6,6 +6,8 @@ public class BookDTO {
     private String type1;
     private String author;
     private int inUse;
+    private String book_location;
+
 
     @Override
     public String toString() {
@@ -22,12 +24,13 @@ public class BookDTO {
     public BookDTO() {
     }
 
-    public BookDTO(String id, String title, String type1, String author, int inuse) {
+    public BookDTO(String id, String title, String type1, String author, int inuse, String book_location) {
         this.id = id;
         this.title = title;
         this.type1 = type1;
         this.author = author;
         this.inUse = inuse;
+        this.book_location = book_location;
     }
 
     public String getId() {
@@ -68,5 +71,13 @@ public class BookDTO {
 
     public void setInUse(int inuse) {
         this.inUse = inuse;
+    }
+
+    public String getBook_location() {
+        return book_location;
+    }
+
+    public void setBook_location(String book_location) {
+        this.book_location = book_location;
     }
 }

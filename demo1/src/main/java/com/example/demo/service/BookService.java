@@ -8,4 +8,6 @@ import java.util.List;
 @Service
 public interface BookService {
     public List<BookDTO> getBookList(String bookSearch);
+
+    public void inUseChange(String id, int inUse);
 }
