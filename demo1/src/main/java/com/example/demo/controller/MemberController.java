@@ -25,14 +25,24 @@ public class MemberController {
 
     private final SessionManager sessionManager;
 
-    @GetMapping("/member/join")
+    @GetMapping("/joinpage")
     public String joinPage(){
         return "/join/join";
     }
 
+    @GetMapping("/")
+    public String mainPage(){
+
+        return "/login/login";
+    }
     @GetMapping("/loginpage")
     public  String loginPage(){
         return "/login/login";
+    }
+
+    @GetMapping("/mainpage2")
+    public String mainPage2(){
+        return "/mainpage/mainpage2";
     }
 
     @GetMapping("/mainpage")
@@ -60,9 +70,9 @@ public class MemberController {
         String name = m1.getMember_name();
         String pw = m1.getMember_pw();
 
-        if(id.length() < 4 || name.length() < 1 || pw.length() < 3){
+        if(id.length() != 9 || name.length() < 2 || pw.length() < 4 || pw.length() > 15 || name.length() > 15){
             model.addAttribute("msg", "아이디나 이름의 길이가 맞지 않습니다.");
-            model.addAttribute("url", "/join");
+            model.addAttribute("url", "/joinpage");
             return "/alert/MessageAlert";
         }
 

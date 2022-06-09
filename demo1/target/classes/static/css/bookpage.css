@@ -14,9 +14,12 @@ button{ cursor: pointer; }
 }
 
 .bookpagebox form{
-    width: 100%; height: 600px;
+    width: 100%; height: 100%;
     background-color: #fff;
-    padding: 60px; box-sizing: border-box;
+    padding: 60px;
+    padding-bottom: 10%;
+    box-sizing: border-box;
+    overflow: auto;
 }
 
 .bookpagebox h2{
@@ -37,8 +40,8 @@ button{ cursor: pointer; }
 
 .bookbox{
     display: block;
-    width: 97%; height: 45%;
-    margin-bottom: 30px;
+    width: 97%;
+    margin-bottom: 0;
     padding: 10px;
     border: 1px solid black;
     background-color: #fafafa;
